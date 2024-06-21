@@ -1,25 +1,26 @@
-import logo from './logo.svg';
+import { Link, Route, Routes} from 'react-router-dom';
 import './App.css';
-
+import Navbar from './Navbar';
+import { DataProvider } from './context/DataContext';
+import { Dashboard } from '@mui/icons-material';
+// import { CssBaseline } from '@mui/material';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+
+     <DataProvider>
+      <Link to='/'></Link>
+      <Link to='/inventory'></Link>
+      <Link to='/customers'></Link>
+      <Link to='/orders'></Link>
+        <Navbar />
+        <Routes>
+        <Route path="/" element={ <Dashboard/>}/>
+        </Routes>
+        </DataProvider>
     </div>
   );
 }
+
 
 export default App;
