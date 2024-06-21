@@ -55,7 +55,7 @@ const Dashboard = () => {
       color: "#4caf50",
     },
     {
-      title: "Customers",
+      title: "Total Customers",
       value: ordersDetails?.customersCount,
       icon: <GroupIcon />,
       color: "#f44336",
